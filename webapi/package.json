@@ -7,9 +7,13 @@
     "update-database": "dotnet ef database update",
     "update-controller": "dotnet aspnet-codegenerator controller -name UserDatabaseController -async -api -outDir Controllers -dc webapi.MyDbContext.MyUserContext -m webapi.MyDbContext.MyUser -f",
     "update-page": "dotnet aspnet-codegenerator razorpage UserDatabaseView List -outDir Pages -dc webapi.MyDbContext.MyUserContext -m webapi.MyDbContext.MyUser -f",
+    "update-proxy": "npx openapi-typescript http://localhost:5202/swagger/v1/swagger.json --output ./src/ApiProxy.ts",
     "watch": "dotnet watch"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "openapi-typescript-fetch": "^1.1.3"
+  }
 }
