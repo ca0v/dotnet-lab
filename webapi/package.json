@@ -1,0 +1,18 @@
+{
+  "name": "webapi",
+  "version": "1.0.0",
+  "description": "A dotnet webapi Lab",
+  "main": "index.js",
+  "scripts": {
+    "update-database": "dotnet ef database update",
+    "update-controller": "dotnet aspnet-codegenerator controller -name UserDatabaseController -async -api -outDir Controllers -dc webapi.MyDbContext.MyUserContext -m webapi.MyDbContext.User -f",
+    "update-view": "dotnet aspnet-codegenerator view ImageRipperView List -outDir Views -dc ImageRipper.PhotoContext -m ImageRipper.Collage -f",
+    "update-svelte-lab": "cd ~/code/ca0v/svelte-lab && npm run build",
+    "update-collage-builder": "cd ~/code/corey-alix/collage-builder && npm run build",
+    "update": "npm-run-all -p update-*",
+    "watch": "dotnet watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
