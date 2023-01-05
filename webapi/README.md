@@ -22,6 +22,10 @@ Once the dbcontext has been generated,
 
 Open the view [UserDatabaseView](http://localhost:5202/UserDatabaseView)
 
+Any changes to MyUserContext are reflected into the database,
+
+    >npm run update-database
+
 ## Links
 
 * [Swagger API](http://localhost:5202/swagger/index.html)
