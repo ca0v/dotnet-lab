@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace webapi.MyDbContext;
 
-public partial class User
+public partial class MyUser
 {
     public long Id { get; set; }
 

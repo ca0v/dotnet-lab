@@ -22,23 +22,23 @@ namespace webapi.Controllers
 
         // GET: api/UserDatabase
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
+        public async Task<ActionResult<IEnumerable<MyUser>>> GetUsers()
         {
-          if (_context.Users == null)
-          {
-              return NotFound();
-          }
+            if (_context.Users == null)
+            {
+                return NotFound();
+            }
             return await _context.Users.ToListAsync();
         }
 
         // GET: api/UserDatabase/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUser(long id)
+        public async Task<ActionResult<MyUser>> GetUser(long id)
         {
-          if (_context.Users == null)
-          {
-              return NotFound();
-          }
+            if (_context.Users == null)
+            {
+                return NotFound();
+            }
             var user = await _context.Users.FindAsync(id);
 
             if (user == null)
@@ -52,7 +52,7 @@ namespace webapi.Controllers
         // PUT: api/UserDatabase/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser(long id, User user)
+        public async Task<IActionResult> PutUser(long id, MyUser user)
         {
             if (id != user.Id)
             {
@@ -83,12 +83,12 @@ namespace webapi.Controllers
         // POST: api/UserDatabase
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<User>> PostUser(User user)
+        public async Task<ActionResult<MyUser>> PostUser(MyUser user)
         {
-          if (_context.Users == null)
-          {
-              return Problem("Entity set 'MyUserContext.Users'  is null.");
-          }
+            if (_context.Users == null)
+            {
+                return Problem("Entity set 'MyUserContext.Users'  is null.");
+            }
             _context.Users.Add(user);
             try
             {
