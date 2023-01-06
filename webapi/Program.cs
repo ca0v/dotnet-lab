@@ -8,12 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add sqlite dbcontext
 builder.Services.AddDbContext<MyUserContext>();
 
-builder.Services.AddControllers();
-builder.Services.AddControllersWithViews();
-
 // get the views to work
 builder.Services.AddRazorPages();
-
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -40,8 +36,7 @@ app.MapControllers();
 app.UseRouting();
 app.UseEndpoints(endpoints =>
 {
-    endpoints.MapControllers();
-    endpoints.MapRazorPages();
+    endpoints.MapRazorPages(); // critical to get Pages to show
 });
 
 app.Run();
